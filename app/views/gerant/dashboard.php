@@ -1,4 +1,8 @@
 <?php
+/** @var array $apprenants */
+/** @var array $currentUser */
+/** @var string $activePage */
+
 if (!isset($apprenants)) {
     header('Location: /gerant/dashboard');
     exit;

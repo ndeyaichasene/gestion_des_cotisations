@@ -1,4 +1,10 @@
 <?php
+/** @var array $apprenants */
+/** @var array $errors */
+/** @var string $success */
+/** @var array $currentUser */
+/** @var string $activePage */
+
 if (!isset($apprenants)) {
     header('Location: /gerant/apprenants');
     exit;
