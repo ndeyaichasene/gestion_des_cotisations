@@ -1,4 +1,9 @@
 <?php
+if (!isset($apprenants)) {
+    header('Location: /gerant/apprenants');
+    exit;
+}
+
 require_once dirname(__DIR__) . '/layouts/header.php';
 require_once dirname(__DIR__) . '/layouts/gerant/header.gerant.php';
 
