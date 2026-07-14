@@ -23,6 +23,7 @@ function initUtilisateurs(string $email, string $password): ?array
                 "motDePasse" => "Passer123",
                 "role" => "GERANT",
                 "dateInscription" => "2026-01-10",
+                "telephone" => "771234567",
                 "estActif" => true,
                 "estAJour" => true
             ],
@@ -35,6 +36,7 @@ function initUtilisateurs(string $email, string $password): ?array
                 "motDePasse" => "Passer123",
                 "role" => "COACH",
                 "dateInscription" => "2026-01-12",
+                "telephone" => "771234568",
                 "estActif" => true,
                 "estAJour" => null
             ],
@@ -47,6 +49,7 @@ function initUtilisateurs(string $email, string $password): ?array
                 "motDePasse" => "Passer123",
                 "role" => "APPRENANT",
                 "dateInscription" => "2026-01-15",
+                "telephone" => "771234569",
                 "estActif" => true,
                 "estAJour" => true
             ]
@@ -58,7 +61,7 @@ function initUtilisateurs(string $email, string $password): ?array
 
     foreach ($users as $user) {
 
-        if ($user["email"] === $email 
+        if (strtolower($user["email"]) === strtolower($email) 
             && $user["motDePasse"] === $password) {
 
             return $user;
@@ -82,6 +85,16 @@ function getData(string $key): mixed
 {
     startSession();
     return $_SESSION[$key] ?? null;
+}
+
+
+
+function removeData(string $key): void
+{
+    startSession();
+    if (isset($_SESSION[$key])) {
+        unset($_SESSION[$key]);
+    }
 }
 
 

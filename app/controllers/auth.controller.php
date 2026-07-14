@@ -68,7 +68,7 @@ function logout()
 
     startSession();
 
-    destroySession();
+    removeData('user');
 
     header('Location: /login');
     exit;
